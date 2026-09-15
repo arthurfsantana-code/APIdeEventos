@@ -23,7 +23,6 @@ public class ParticipanteController {
         this.participanteService = participanteService;
     }
 
-    // RF04 - Cadastrar participante
     @PostMapping
     public ResponseEntity<ParticipanteResponse> cadastrar(
             @Valid @RequestBody ParticipanteRequest request) {
@@ -41,7 +40,6 @@ public class ParticipanteController {
                 .body(toResponse(participanteSalvo));
     }
 
-    // Listar participantes
     @GetMapping
     public ResponseEntity<List<ParticipanteResponse>> listarTodos() {
 
@@ -54,7 +52,6 @@ public class ParticipanteController {
         return ResponseEntity.ok(participantes);
     }
 
-    // Buscar participante por ID
     @GetMapping("/{id}")
     public ResponseEntity<ParticipanteResponse> buscarPorId(
             @PathVariable Long id) {
