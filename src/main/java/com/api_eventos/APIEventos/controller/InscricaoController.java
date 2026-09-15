@@ -21,7 +21,6 @@ public class InscricaoController {
         this.inscricaoService = inscricaoService;
     }
 
-    // RF05 - Inscrever participante em evento
     @PostMapping("/evento/{eventoId}/participante/{participanteId}")
     public ResponseEntity<InscricaoResponse> inscrever(
             @PathVariable Long eventoId,
@@ -38,7 +37,6 @@ public class InscricaoController {
                 .body(toResponse(inscricao));
     }
 
-    // RF06 - Listar participantes inscritos em um evento
     @GetMapping("/evento/{eventoId}")
     public ResponseEntity<List<InscricaoResponse>> listarPorEvento(
             @PathVariable Long eventoId) {
@@ -52,7 +50,6 @@ public class InscricaoController {
         return ResponseEntity.ok(inscricoes);
     }
 
-    // RF07 - Cancelar inscrição
     @DeleteMapping(
             "/evento/{eventoId}/participante/{participanteId}"
     )

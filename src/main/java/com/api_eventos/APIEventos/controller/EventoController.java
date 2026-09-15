@@ -21,7 +21,6 @@ public class EventoController {
         this.eventoService = eventoService;
     }
 
-    // RF01 - Cadastrar evento
     @PostMapping
     public ResponseEntity<EventoResponse> cadastrar(
             @Valid @RequestBody EventoRequest request) {
@@ -41,7 +40,6 @@ public class EventoController {
                 .body(toResponse(eventoSalvo));
     }
 
-    // RF02 - Listar todos os eventos
     @GetMapping
     public ResponseEntity<List<EventoResponse>> listarTodos() {
 
@@ -53,7 +51,6 @@ public class EventoController {
         return ResponseEntity.ok(eventos);
     }
 
-    // RF03 - Consultar evento e vagas restantes
     @GetMapping("/{id}")
     public ResponseEntity<EventoResponse> buscarPorId(
             @PathVariable Long id) {
